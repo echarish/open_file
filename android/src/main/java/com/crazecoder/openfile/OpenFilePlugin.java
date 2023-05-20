@@ -111,7 +111,7 @@ public class OpenFilePlugin implements MethodCallHandler
                             result(-3, "Permission denied: " + Manifest.permission.READ_MEDIA_AUDIO);
                             return;
                         }
-                    } else if (!Environment.isExternalStorageManager()) {
+                    } else if (!hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE)) {
                         result(-3, "Permission denied: " + Manifest.permission.MANAGE_EXTERNAL_STORAGE);
                         return;
                     }
